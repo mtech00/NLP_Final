@@ -1,0 +1,41 @@
+# Ignore data files
+data/
+!data/raw/  # Allow raw folder (but not its contents)
+data/raw/*
+!data/raw/.gitkeep  # Keep the raw folder structure
+data/processed/
+
+# Ignore model files
+outputs/models/
+outputs/predictions/
+outputs/figures/
+
+# Ignore Jupyter Notebook checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+env/
+*.pyc
+__pycache__/
+*.pkl
+*.joblib
+
+# Ignore Docker build files
+*.log
+*.out
+*.err
+*.pid
+
+# Ignore dependencies (if using virtual environment instead of requirements.txt)
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore VSCode and PyCharm IDE settings
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Ignore environment variables and credentials
+.env
