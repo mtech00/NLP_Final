@@ -1,20 +1,24 @@
 import os
-import requests
 import zipfile
+import urllib.request
 from io import BytesIO
 
 def download_and_extract(url, extract_to):
-    """Download and extract a ZIP file from a URL, saving CSVs directly to extract_to."""
-    response = requests.get(url)
-    if response.status_code == 200:
-        with zipfile.ZipFile(BytesIO(response.content), 'r') as zip_ref:
-            for file in zip_ref.namelist():
-                if file.endswith('.csv'):
-                    with zip_ref.open(file) as source, open(os.path.join(extract_to, os.path.basename(file)), 'wb') as target:
-                        target.write(source.read())
-        print(f"Extracted CSV files from {url} to {extract_to}")
-    else:
-        print(f"Failed to download {url}, status code: {response.status_code}")
+    """Download and extract a ZIP file from a URL, saving CSVs directly ."""
+    try:
+        with urllib.request.urlopen(url) as response:
+            if response.status == 200:
+                zip_data = BytesIO(response.read())
+                with zipfile.ZipFile(zip_data, 'r') as zip_ref:
+                    for file in zip_ref.namelist():
+                        if file.endswith('.csv'):
+                            with zip_ref.open(file) as source, open(os.path.join(extract_to, os.path.basename(file)), 'wb') as target:
+                                target.write(source.read())
+                print(f"Extracted CSV files from {url} to {extract_to}")
+            else:
+                print(f"Failed to download {url}, status code: {response.status}")
+    except Exception as e:
+        print(f"Error downloading {url}: {e}")
 
 if __name__ == "__main__":
     # Define URLs
