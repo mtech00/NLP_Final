@@ -105,7 +105,7 @@ after the tokenization fast look the top words by sentiment
 
 -   **Bag of Words (CountVectorizer)** vs. **TF-IDF**.
 -   TF-IDF performed better (higher test accuracy, less overfitting).
--   For the vectorization part, I compared the two most well-known methods with n-grams implemented. Before the experiments, I assumed TF-IDF would perform better, but I was surprised by how much Bag-of-Words overfitted. This is because TF-IDF considers word importance and selects only the most relevant ones, while Bag-of-Words treats all words equally. The reason Bag-of-Words overfits more is its lack of generalization. In the experiments, this difference is clearly visible through validation and test set accuracy, as well as the learning curves.
+-   For the vectorization part, I compared the two most well-known methods with n-grams implemented. Before the experiments, I assumed TF-IDF would perform better, but I was surprised by how much Bag-of-Words overfitted. This is because TF-IDF considers word and order by importance and selects only the most relevant ones, while Bag-of-Words treats all words equally and keep the all. The reason Bag-of-Words overfits more is its lack of generalization. In the experiments, this difference is clearly visible through validation and test set accuracy, as well as the learning curves.
 
 ![Alt text](readme_figures/figure_3.png)
 ![Alt text](readme_figures/figure_4.png)
@@ -148,7 +148,6 @@ I prefer Logistic Regression since Neural Networks are more computationally inte
 
 Now, our main model is Logistic Regression. Here, we will perform hyperparameter tuning and determine the deployment parameters for our model.
 
-Now, our main model is Logistic Regression. Here, we will perform hyperparameter tuning and determine the deployment parameters for our model.  
 Fitting 5 folds for each of 36 candidates, totalling 180 fits
 
 ```
