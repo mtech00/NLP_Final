@@ -10,7 +10,7 @@
 This project focuses on **binary classification** of movie reviews (positive/negative) using a dataset of 50,000 reviews.
 
 1.  **Data Science part**: Data exploration, text preprocessing, experimentation with different vectorization/stemming/lemmatization, model training, and selection.
-2.  **MLE part**: Structuring the code in a GitHub repo (private), using Docker containers for reproducible training and inference.
+2.  **MLE part**: Structuring the code in a GitHub repo , using Docker containers for reproducible training and inference.
 
 ----------
 
@@ -39,7 +39,7 @@ All the insights gathered from the experiment's notebook can be found in the not
 > **Notebook quote**:  
 > “As you can see, the distributions of different sentiments look similar, so we cannot consider it an important feature.”
 
-figure 1
+![Alt text](readme_figures/figure_1.png)
 
 ----------
 
@@ -78,10 +78,10 @@ also we removed the stopwords with embedded pre-trained spaCy tokenizer
 -   Lemmatization retained better linguistic meaning.
 -   This is a well-known trade-off between speed and accuracy. Lemmatization preserves meaning but is computationally intensive, while stemming is a simpler, faster cutting approach. If we look at a side-by-side comparison of lemmatized vs. stemmed words, we can understand why lemmatization is better.
 
-figure 2
+![Alt text](readme_figures/figure_2.png)
 
 after the tokenization fast look the top words by sentiment  
-figure 5
+![Alt text](readme_figures/figure_5.png)
 
 ----------
 
@@ -107,8 +107,8 @@ figure 5
 -   TF-IDF performed better (higher test accuracy, less overfitting).
 -   For the vectorization part, I compared the two most well-known methods with n-grams implemented. Before the experiments, I assumed TF-IDF would perform better, but I was surprised by how much Bag-of-Words overfitted. This is because TF-IDF considers word importance and selects only the most relevant ones, while Bag-of-Words treats all words equally. The reason Bag-of-Words overfits more is its lack of generalization. In the experiments, this difference is clearly visible through validation and test set accuracy, as well as the learning curves.
 
-figure 3  
-figure 4
+![Alt text](readme_figures/figure_3.png)
+![Alt text](readme_figures/figure_4.png)
 
 
 
