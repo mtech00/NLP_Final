@@ -158,7 +158,7 @@ Accuracy: 0.8929
 ```
 
 roc auc curve graph on test data
-figure 6
+![Alt text](readme_figures/figure_6.png)
 
 > **Notebook metrics**:
 > 
