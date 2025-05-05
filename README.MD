@@ -1,6 +1,7 @@
 
 
 
+
 ----------
 
 # Movie Review Sentiment Analysis
@@ -48,8 +49,7 @@ All the insights gathered from the experiment's notebook can be found in the not
 EDA part  
 tokenization, stop words filtering, compared stemming vs lemmatization, vectorization: compared tf-idf vs bag of words;
 
-> **Notebook quote**:  
-> “The data is filled with stopwords and grammatical words that do not carry sentiment or meaning.”
+
 
 **Key steps**:
 
@@ -349,7 +349,7 @@ Execution Time: 31.58 seconds
 
 ```
     
-----------
+
 
 
 
